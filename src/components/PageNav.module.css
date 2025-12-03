@@ -1,0 +1,30 @@
+li {
+  list-style: none;
+}
+
+.navStyle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.navStyle ul {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+.button {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -1,0 +1,82 @@
+.aboutPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 64px 32px 40px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("../assets/homepage.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.description {
+  width: min(1100px, 90%);
+  margin: 0 0 24px;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.55);
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  align-self: flex-end;
+  margin-top: auto;
+  width: min(460px, 60vw);
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 48px 16px 32px;
+  }
+  .infoGrid {
+    width: 100%;
+    align-self: stretch;
+    margin-top: 16px;
+  }
+}
+
+.card {
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 8px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+.hours {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.5;
+}
+.hoursCard {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  width: min(420px, 60vw);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .hoursCard {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
