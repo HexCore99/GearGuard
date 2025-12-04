@@ -2,9 +2,11 @@ import { Suspense, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
-import Login from "./pages/Login";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
+import Login from "./pages/Login";
+import EquipmentList from "./components/EquipmentList";
+import Temp from "./components/Temp";
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<About />} />
           <Route path="contact-us" element={<ContactUs />} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={<EquipmentList />} />
+          {/* <Route path="login" element={<Login />} /> */}
         </Routes>
       </Suspense>
     </BrowserRouter>

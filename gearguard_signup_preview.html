@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GearGuard Sign Up Preview</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #111827 0%, #020617 55%, #000000 100%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      color: #f9fafb;
+    }
+
+    .signup-wrapper {
+      padding: 24px;
+    }
+
+    .signup-card {
+      width: min(420px, 100%);
+      background: rgba(8, 12, 16, 0.9);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 26px 28px 24px;
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .signup-header h2 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+      letter-spacing: 0.01em;
+    }
+
+    .signup-header p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #cbd5f5;
+    }
+
+    .signup-form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.95rem;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-label {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .text-input {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      color: #f9fafb;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .text-input::placeholder {
+      color: #6b7280;
+    }
+
+    .text-input:focus {
+      border-color: #f97316;
+      box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.7);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    .checkbox-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .checkbox-wrap input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      accent-color: #f97316;
+      cursor: pointer;
+    }
+
+    .inline-link {
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #fb923c;
+      font-weight: 500;
+    }
+
+    .inline-link:hover {
+      text-decoration: underline;
+    }
+
+    .primary-button {
+      margin-top: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff7a1a, #ff4d00);
+      color: #111827;
+      box-shadow:
+        0 16px 40px rgba(248, 115, 22, 0.45),
+        0 0 0 1px rgba(248, 115, 22, 0.6);
+      transition: transform 0.1s ease, box-shadow 0.1s ease,
+        filter 0.1s ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow:
+        0 20px 45px rgba(248, 115, 22, 0.55),
+        0 0 0 1px rgba(248, 115, 22, 0.7);
+    }
+
+    .primary-button:active {
+      transform: translateY(0);
+      box-shadow:
+        0 12px 30px rgba(248, 115, 22, 0.45),
+        0 0 0 1px rgba(248, 115, 22, 0.7);
+    }
+
+    .secondary-text {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cbd5f5;
+    }
+
+    @media (max-width: 480px) {
+      .signup-card {
+        padding: 22px 20px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-wrapper">
+    <div class="signup-card">
+      <header class="signup-header">
+        <h2>Create your GearGuard account</h2>
+        <p>
+          Register with your university email to request gear, track your rentals,
+          and keep your lab equipment in play.
+        </p>
+      </header>
+
+      <form class="signup-form">
+        <div class="field-group">
+          <label class="field-label" for="fullName">Full name</label>
+          <input
+            id="fullName"
+            type="text"
+            class="text-input"
+            placeholder="Your name"
+            required
+          />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="email">University email</label>
+          <input
+            id="email"
+            type="email"
+            class="text-input"
+            placeholder="name@university.edu"
+            required
+          />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="text-input"
+            placeholder="Create a password"
+            required
+          />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="confirmPassword">Confirm password</label>
+          <input
+            id="confirmPassword"
+            type="password"
+            class="text-input"
+            placeholder="Re-enter your password"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label class="checkbox-wrap">
+            <input type="checkbox" required />
+            <span>Agree to terms</span>
+          </label>
+          <a href="#" class="inline-link">Read policies</a>
+        </div>
+
+        <button type="submit" class="primary-button">
+          Create account
+        </button>
+
+        <p class="secondary-text">
+          Already using GearGuard?
+          <a href="#" class="inline-link">Sign in</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

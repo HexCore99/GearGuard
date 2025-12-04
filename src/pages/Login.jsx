@@ -1,7 +1,12 @@
+import { useState } from "react";
 import PageNav from "../components/PageNav";
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
 import styles from "./Login.module.css";
 
 function Login() {
+  const [activeAuthForm, setActiveAuthForm] = useState("sign-in");
+
   return (
     <div className={styles.loginPage}>
       <PageNav />
@@ -26,7 +31,9 @@ function Login() {
             </div>
             <div className={styles.metric}>
               <span className={styles.metricValue}>20 pts</span>
-              <span className={styles.metricLabel}>Auto maintenance threshold</span>
+              <span className={styles.metricLabel}>
+                Auto maintenance threshold
+              </span>
             </div>
             <div className={styles.metric}>
               <span className={styles.metricValue}>24/7</span>
@@ -36,54 +43,11 @@ function Login() {
         </section>
 
         <section className={styles.formPanel}>
-          <div className={styles.formCard}>
-            <div className={styles.formHeader}>
-              <h2>Welcome back</h2>
-              <p>
-                Access your GearGuard dashboard to manage rentals, view histories,
-                and keep gear in play.
-              </p>
-            </div>
-            <form className={styles.form}>
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="name@university.edu"
-                required
-              />
-
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                required
-              />
-
-              <div className={styles.helperRow}>
-                <label className={styles.checkbox}>
-                  <input type="checkbox" name="remember" />
-                  <span>Keep me signed in</span>
-                </label>
-                <a className={styles.link} href="/contact-us">
-                  Forgot password?
-                </a>
-              </div>
-
-              <button type="submit" className={styles.primaryButton}>
-                Sign In
-              </button>
-              <p className={styles.secondaryAction}>
-                New to GearGuard?{" "}
-                <a className={styles.link} href="/contact-us">
-                  Request access
-                </a>
-              </p>
-            </form>
-          </div>
+          {activeAuthForm === "sign-in" ? (
+            <SignIn setActiveAuthForm={setActiveAuthForm} />
+          ) : (
+            <SignUp setActiveAuthForm={setActiveAuthForm} />
+          )}
         </section>
       </main>
     </div>

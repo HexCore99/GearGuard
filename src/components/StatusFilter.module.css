@@ -1,0 +1,50 @@
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(15, 23, 42, 0);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+.filter:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: #111827;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.select:hover {
+  cursor: pointer;
+}
+
+.filter:hover {
+  border-color: #d1d5db;
+}

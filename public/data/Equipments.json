@@ -1,0 +1,102 @@
+[
+  {
+    "id": "EQ001",
+    "name": "Cricket Bat",
+    "category": "Ball Sports",
+    "status": "Available",
+    "health": 85,
+    "image": "🏏",
+    "price": 5,
+    "lastRented": "2 days ago"
+  },
+  {
+    "id": "EQ002",
+    "name": "Football",
+    "category": "Ball Sports",
+    "status": "Rented",
+    "health": 92,
+    "image": "⚽",
+    "price": 3,
+    "lastRented": "1 day ago"
+  },
+  {
+    "id": "EQ003",
+    "name": "Chess Set Deluxe",
+    "category": "Board Games",
+    "status": "Available",
+    "health": 78,
+    "image": "♟️",
+    "price": 2,
+    "lastRented": "5 days ago"
+  },
+  {
+    "id": "EQ004",
+    "name": "Cricket Ball Set",
+    "category": "Ball Sports",
+    "status": "Available",
+    "health": 65,
+    "image": "🏏",
+    "price": 4,
+    "lastRented": "3 days ago"
+  },
+  {
+    "id": "EQ005",
+    "name": "Goalkeeper Gloves",
+    "category": "Ball Sports",
+    "status": "Under Maintenance",
+    "health": 15,
+    "image": "🧤",
+    "price": 6,
+    "lastRented": "1 week ago"
+  },
+  {
+    "id": "EQ006",
+    "name": "Basketball",
+    "category": "Ball Sports",
+    "status": "Rented",
+    "health": 88,
+    "image": "🏀",
+    "price": 4,
+    "lastRented": "Today"
+  },
+  {
+    "id": "EQ007",
+    "name": "Tennis Racket",
+    "category": "Racket Sports",
+    "status": "Available",
+    "health": 95,
+    "image": "🎾",
+    "price": 7,
+    "lastRented": "4 days ago"
+  },
+  {
+    "id": "EQ008",
+    "name": "Volleyball",
+    "category": "Ball Sports",
+    "status": "Damaged",
+    "health": 12,
+    "image": "🏐",
+    "price": 3,
+    "lastRented": "2 weeks ago"
+  },
+  {
+    "id": "EQ009",
+    "name": "Badminton Set",
+    "category": "Racket Sports",
+    "status": "Available",
+    "health": 70,
+    "image": "🏸",
+    "price": 5,
+    "lastRented": "6 days ago"
+  },
+  {
+    "id": "EQ010",
+    "name": "Table Tennis Paddle",
+    "category": "Racket Sports",
+    "status": "Available",
+    "health": 82,
+    "image": "🏓",
+    "price": 4,
+    "lastRented": "3 days ago"
+  }
+]

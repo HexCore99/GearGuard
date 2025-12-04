@@ -1,0 +1,44 @@
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelAndPoints {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1f2a44;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.healthValue {
+  font-size: 1rem;
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background-color: #e6e8ed;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 200ms ease;
+}
+
+.full {
+  background: linear-gradient(90deg, #00a86b, #00d27a);
+}
+.medium {
+  background: linear-gradient(90deg, #ffb400, #ffca28);
+}
+.low {
+  background: linear-gradient(90deg, #ff4e42, #ff6f61);
+}

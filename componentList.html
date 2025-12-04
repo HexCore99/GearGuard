@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GearGuard – Dashboard</title>
+    <style>
+      /* ===== Base styles ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: radial-gradient(circle at top left, #1f2937, #020617 55%);
+        color: #f9fafb;
+        padding: 24px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ===== Layout ===== */
+      .app-shell {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 18px;
+        border: 1px solid #1f2937;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      /* ===== Top navbar ===== */
+      .navbar {
+        padding: 14px 24px;
+        border-bottom: 1px solid #1f2937;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(15, 23, 42, 0.95);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        background: conic-gradient(
+          from 180deg,
+          #22c55e,
+          #0ea5e9,
+          #6366f1,
+          #22c55e
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px;
+        color: #020617;
+      }
+
+      .brand-text-main {
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        font-size: 18px;
+      }
+
+      .brand-text-sub {
+        font-size: 11px;
+        color: #9ca3af;
+      }
+
+      .user-section {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+
+      .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #38bdf8, #6366f1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      /* ===== Content area ===== */
+      .content {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 0;
+      }
+
+      @media (max-width: 880px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== Left column ===== */
+      .left-pane {
+        padding: 20px 24px 24px 24px;
+        border-right: 1px solid #1f2937;
+      }
+
+      .page-header {
+        margin-bottom: 18px;
+      }
+
+      .page-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .page-subtitle {
+        font-size: 13px;
+        color: #9ca3af;
+      }
+
+      /* Small badge row under title */
+      .badge-row {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .badge {
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        color: #9ca3af;
+      }
+
+      /* ===== Stats cards ===== */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+
+      @media (max-width: 880px) {
+        .stats-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .stat-card {
+        background: radial-gradient(circle at top left, #0f172a, #020617 70%);
+        border-radius: 12px;
+        padding: 10px 12px;
+        border: 1px solid #1f2937;
+      }
+
+      .stat-label {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+
+      .stat-value {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .stat-footnote {
+        font-size: 10px;
+        color: #6b7280;
+      }
+
+      /* ===== Modules grid ===== */
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        margin-top: 6px;
+      }
+
+      .section-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .section-caption {
+        font-size: 12px;
+        color: #9ca3af;
+      }
+
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      @media (max-width: 640px) {
+        .modules-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .module-card {
+        background: #020617;
+        border-radius: 14px;
+        padding: 14px 14px 12px;
+        border: 1px solid #1f2937;
+        transition: border 0.15s ease, transform 0.15s ease,
+          box-shadow 0.15s ease;
+        cursor: pointer;
+      }
+
+      .module-card:hover {
+        border-color: #22c55e;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+      }
+
+      .module-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+
+      .module-title {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .module-tag {
+        font-size: 11px;
+        padding: 3px 7px;
+        border-radius: 999px;
+        background: rgba(34, 197, 94, 0.08);
+        color: #bbf7d0;
+        border: 1px solid rgba(34, 197, 94, 0.4);
+      }
+
+      .module-desc {
+        font-size: 12px;
+        color: #9ca3af;
+        margin-bottom: 8px;
+      }
+
+      .module-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 11px;
+        color: #6b7280;
+      }
+
+      .module-link {
+        font-size: 11px;
+        font-weight: 500;
+        color: #a5b4fc;
+      }
+
+      /* ===== Right column ===== */
+      .right-pane {
+        padding: 20px 22px 24px 22px;
+      }
+
+      .panel {
+        background: #020617;
+        border-radius: 14px;
+        border: 1px solid #1f2937;
+        padding: 14px 14px 12px;
+        margin-bottom: 12px;
+      }
+
+      .panel-title {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .panel-caption {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-bottom: 10px;
+      }
+
+      .activity-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 12px;
+      }
+
+      .activity-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        color: #e5e7eb;
+      }
+
+      .activity-main {
+        max-width: 70%;
+      }
+
+      .activity-meta {
+        text-align: right;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+
+      .health-bar {
+        margin-top: 4px;
+        width: 100%;
+        height: 5px;
+        border-radius: 999px;
+        background: #0b1120;
+        overflow: hidden;
+      }
+
+      .health-bar-inner {
+        height: 100%;
+        width: 32%;
+        background: linear-gradient(90deg, #f97316, #ef4444);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        color: #9ca3af;
+        margin-right: 4px;
+      }
+
+      .pill-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #22c55e;
+      }
+
+      .pill-danger .pill-dot {
+        background: #ef4444;
+      }
+
+      .pill-warning .pill-dot {
+        background: #facc15;
+      }
+
+      /* Small footer */
+      .footer {
+        padding: 8px 22px 12px;
+        border-top: 1px solid #1f2937;
+        font-size: 10px;
+        color: #6b7280;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <!-- ===== NAVBAR ===== -->
+      <header class="navbar">
+        <div class="brand">
+          <div class="brand-logo">G</div>
+          <div>
+            <div class="brand-text-main">GearGuard</div>
+            <div class="brand-text-sub">Sports Equipment Rental</div>
+          </div>
+        </div>
+        <div class="user-section">
+          <span>Admin • Gym Desk</span>
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <!-- ===== MAIN CONTENT ===== -->
+      <div class="content">
+        <!-- === LEFT PANE === -->
+        <section class="left-pane">
+          <div class="page-header">
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">
+              Track rentals, health, and fines for university sports gear.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Asset Tracking</span>
+              <span class="badge">Check-out / Check-in</span>
+              <span class="badge">Health & Maintenance</span>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Total Items</div>
+              <div class="stat-value">124</div>
+              <div class="stat-footnote">Across all categories</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Currently Rented</div>
+              <div class="stat-value">32</div>
+              <div class="stat-footnote">12 due today</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Under Maintenance</div>
+              <div class="stat-value">7</div>
+              <div class="stat-footnote">Health &lt; 20</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Outstanding Fines</div>
+              <div class="stat-value">৳ 1,840</div>
+              <div class="stat-footnote">Auto-calculated</div>
+            </div>
+          </div>
+
+          <!-- Component / Module list -->
+          <div class="section-header">
+            <div class="section-title">Modules</div>
+            <div class="section-caption">Pick a section to manage.</div>
+          </div>
+
+          <div class="modules-grid">
+            <article class="module-card">
+              <div class="module-header">
+                <h2 class="module-title">Equipment Inventory</h2>
+                <span class="module-tag">Core</span>
+              </div>
+              <p class="module-desc">
+                View all items with ID, category, status, and health_points.
+              </p>
+              <div class="module-footer">
+                <span>124 items • 5 categories</span>
+                <span class="module-link">&gt; Open</span>
+              </div>
+            </article>
+
+            <article class="module-card">
+              <div class="module-header">
+                <h2 class="module-title">Check-out / Check-in</h2>
+                <span class="module-tag">Daily</span>
+              </div>
+              <p class="module-desc">
+                Log rentals, returns, and auto-update item status.
+              </p>
+              <div class="module-footer">
+                <span>32 active rentals</span>
+                <span class="module-link">&gt; Open</span>
+              </div>
+            </article>
+
+            <article class="module-card">
+              <div class="module-header">
+                <h2 class="module-title">Rental History</h2>
+                <span class="module-tag">History</span>
+              </div>
+              <p class="module-desc">
+                Search past rentals by student, item, or date range.
+              </p>
+              <div class="module-footer">
+                <span>1,248 records</span>
+                <span class="module-link">&gt; Open</span>
+              </div>
+            </article>
+
+            <article class="module-card">
+              <div class="module-header">
+                <h2 class="module-title">Fine Calculation</h2>
+                <span class="module-tag">Auto</span>
+              </div>
+              <p class="module-desc">
+                Calculate late fees from due date and return date.
+              </p>
+              <div class="module-footer">
+                <span>8 overdue rentals</span>
+                <span class="module-link">&gt; Open</span>
+              </div>
+            </article>
+
+            <article class="module-card">
+              <div class="module-header">
+                <h2 class="module-title">Maintenance Queue</h2>
+                <span class="module-tag">Health</span>
+              </div>
+              <p class="module-desc">
+                Items under 20 health move here automatically. Reset after
+                repairs.
+              </p>
+              <div class="module-footer">
+                <span>7 items waiting</span>
+                <span class="module-link">&gt; Open</span>
+              </div>
+            </article>
+
+            <article class="module-card">
+              <div class="module-header">
+                <h2 class="module-title">Reports & Exports</h2>
+                <span class="module-tag">Optional</span>
+              </div>
+              <p class="module-desc">
+                Download monthly summaries of usage, damage, and fines.
+              </p>
+              <div class="module-footer">
+                <span>CSV / PDF</span>
+                <span class="module-link">&gt; Open</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- === RIGHT PANE === -->
+        <aside class="right-pane">
+          <section class="panel">
+            <h2 class="panel-title">Low Health Items</h2>
+            <p class="panel-caption">
+              Items below 20 health are automatically marked
+              <strong>Under Maintenance</strong>.
+            </p>
+
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-main">
+                  <strong>Cricket Bat #C-14</strong>
+                  <div class="health-bar">
+                    <div class="health-bar-inner"></div>
+                  </div>
+                </div>
+                <div class="activity-meta">
+                  <div>Health: 18</div>
+                  <div>Last used: Today</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-main">
+                  <strong>Football #F-03</strong>
+                  <div class="health-bar">
+                    <div class="health-bar-inner" style="width: 24%"></div>
+                  </div>
+                </div>
+                <div class="activity-meta">
+                  <div>Health: 15</div>
+                  <div>Last used: 2d ago</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-main">
+                  <strong>Chess Set #CH-09</strong>
+                  <div class="health-bar">
+                    <div class="health-bar-inner" style="width: 16%"></div>
+                  </div>
+                </div>
+                <div class="activity-meta">
+                  <div>Health: 12</div>
+                  <div>Last used: 5d ago</div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="panel">
+            <h2 class="panel-title">Today at a glance</h2>
+            <p class="panel-caption">Quick view of rentals and returns.</p>
+
+            <div style="margin-bottom: 8px">
+              <span class="pill">
+                <span class="pill-dot"></span>
+                6 check-outs
+              </span>
+              <span class="pill pill-warning">
+                <span class="pill-dot"></span>
+                3 due soon
+              </span>
+              <span class="pill pill-danger">
+                <span class="pill-dot"></span>
+                2 overdue
+              </span>
+            </div>
+
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-main">
+                  Kabir rented <strong>Football #F-10</strong>
+                </div>
+                <div class="activity-meta">
+                  <div>Due 5pm</div>
+                  <div>1h ago</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-main">
+                  Anika returned <strong>Cricket Pads #CP-02</strong>
+                </div>
+                <div class="activity-meta">
+                  <div>No fine</div>
+                  <div>Just now</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-main">
+                  Arif overdue on <strong>Chess Set #CH-03</strong>
+                </div>
+                <div class="activity-meta">
+                  <div>+৳ 120</div>
+                  <div>1d late</div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+
+      <!-- ===== FOOTER ===== -->
+      <footer class="footer">
+        <span>GearGuard · University Gym Rental System</span>
+        <span>Health updates apply on every return.</span>
+      </footer>
+    </div>
+  </body>
+</html>

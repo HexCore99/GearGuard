@@ -1,0 +1,110 @@
+.formCard {
+  width: min(420px, 100%);
+  background: rgba(8, 12, 16, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 26px 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.formCard h2 {
+  margin: 0px;
+  font-size: 1.6rem;
+  color: #f6f7fb;
+}
+
+.formCard p {
+  margin: 6px 0 16px;
+  color: #c4ceda;
+  font-size: 0.98rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  font-weight: 600;
+  color: #e8ecf2;
+  margin-top: 10px;
+}
+
+.form input:not([type="checkbox"]) {
+  width: 90%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.09);
+  color: #f6f7fb;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.policySection {
+  display: flex;
+  justify-content: space-between;
+}
+.readPolicies {
+  color: #ff7a29;
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-decoration-color: currentColor;
+}
+.readPolicies:hover {
+  color: #ff7a1a;
+  text-decoration: underline;
+}
+.checkbox input {
+  accent-color: #ff7a29;
+}
+
+.primaryBtn {
+  margin-top: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff7a1a, #ff4d00);
+  color: #111827;
+  box-shadow: 0 16px 40px rgba(248, 115, 22, 0.45),
+    0 0 0 1px rgba(248, 115, 22, 0.6);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(248, 115, 22, 0.55),
+    0 0 0 1px rgba(248, 115, 22, 0.7);
+}
+
+.alreadyHaveAccount {
+  margin-top: 16px;
+  font-weight: 300px;
+  color: #c4ceda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.secondaryBtn {
+  background: none;
+  border: none;
+  color: #ff7a29;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
