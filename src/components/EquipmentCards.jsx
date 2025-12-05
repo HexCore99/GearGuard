@@ -13,6 +13,7 @@ function EquipmentCards({ equipments }) {
           health={curr.health}
           lastRented={curr.lastRented}
           id={curr.id}
+          image={curr.image}
         />
       ))}
     </div>
