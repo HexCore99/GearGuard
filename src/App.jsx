@@ -16,8 +16,8 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<About />} />
           <Route path="contact-us" element={<ContactUs />} />
-          <Route path="login" element={<EquipmentList />} />
-          {/* <Route path="login" element={<Login />} /> */}
+          <Route path="equipment" element={<EquipmentList />} />
+          <Route path="signIn" element={<Login />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

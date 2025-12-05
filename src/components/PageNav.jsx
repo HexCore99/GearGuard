@@ -1,31 +1,53 @@
-import styles from "./PageNav.module.css";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "./Logo";
-function PageNav() {
+import { Shield } from "lucide-react";
+import styles from "./PageNav.module.css";
+
+const NavBar = () => {
   return (
-    <div>
-      <nav className={styles.navStyle}>
-        <Logo />
-        <ul>
-          <li>
-            <NavLink to="/about" className={styles.button}>
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Logo */}
+          <NavLink to="/" className={styles.logo}>
+            <Shield className={styles.logoIcon} />
+            <span className={styles.logoText}>GearGuard</span>
+          </NavLink>
+
+          {/* Navigation */}
+          <nav className={styles.nav}>
+            <NavLink
+              to="/equipment"
+              className={({ isActive }) =>
+                isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+              }
+            >
+              Equipment
+            </NavLink>
+            <NavLink
+              to="/rentals"
+              className={({ isActive }) =>
+                isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+              }
+            >
+              My Rentals
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+              }
+            >
               About
             </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact-us" className={styles.button}>
-              Contact-Us
+            <NavLink to="/signIn" className={styles.signInButton}>
+              Sign In
             </NavLink>
-          </li>
-          <li>
-            <NavLink to="/login" className={styles.button}>
-              Login
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </div>
+          </nav>
+        </div>
+      </div>
+    </header>
   );
-}
+};
 
-export default PageNav;
+export default NavBar;
