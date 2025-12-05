@@ -1,7 +1,8 @@
-/* Header Container */
 .header {
-  background: linear-gradient(90deg, #4f46e5, #7c3aed, #db2777);
+  /* background: linear-gradient(90deg, #4f46e5, #7c3aed, #db2777); */
+  background: linear-gradient(90deg, #db2777, #7c3aed, #4f46e5);
   border-bottom: none;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -22,7 +23,6 @@
   }
 }
 
-/* Content Wrapper */
 .content {
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,6 @@
   height: 4rem;
 }
 
-/* Logo Section */
 .logo {
   display: flex;
   align-items: center;
@@ -51,7 +50,6 @@
   color: #ffffff;
 }
 
-/* Navigation */
 .nav {
   display: flex;
   gap: 1.5rem;
@@ -79,7 +77,6 @@
   outline: none;
 }
 
-/* Active link styling */
 .navLink.active {
   color: #ffffff;
   font-weight: 600;
@@ -95,7 +92,6 @@
   background-color: #ffffff;
 }
 
-/* Sign In Button */
 .signInButton {
   background-color: #ffffff;
   color: #4f46e5;
@@ -121,7 +117,6 @@
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .nav {
     gap: 1rem;

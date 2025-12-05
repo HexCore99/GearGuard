@@ -37,17 +37,13 @@ function MyRentals() {
         <GearGuardHero>
           Track Your Rented Equipment and return dates
         </GearGuardHero>
-        <div className={styles.dashboard}>
-          <DashBoard />
-        </div>
-        <div className={styles.filters}>
-          <FilterSection
-            stausValue={filterStatus}
-            onStatusChange={onFilterChange}
-            FilterStatuses={FilterStatuses}
-          />
-        </div>
-        <div className={styles.equipments}>
+        <DashBoard />
+        <FilterSection
+          stausValue={filterStatus}
+          onStatusChange={onFilterChange}
+          FilterStatuses={FilterStatuses}
+        />
+        <div className={styles.cards}>
           <ShowEquipmentCards rentalLog={rentalLog} />
         </div>
       </div>

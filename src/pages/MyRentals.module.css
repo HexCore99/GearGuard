@@ -4,14 +4,15 @@
 }
 
 .content {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 24px 16px;
 }
 
-.dashboard,
-.filters,
-.equipments {
-  width: 100%;
+.cards {
+  display: flex;
+  justify-content:center 
 }
