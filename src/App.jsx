@@ -3,11 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import About from "./pages/About";
-import ContactUs from "./pages/ContactUs";
 import Login from "./pages/Login";
 import EquipmentList from "./components/EquipmentList";
-import Temp from "./components/Temp";
 import MyRentals from "./pages/MyRentals";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="my-rentals" element={<MyRentals />} />
           <Route path="equipment" element={<EquipmentList />} />
-          <Route path="signIn" element={<Login />} />
+          <Route path="signIn" element={<SignIn />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
