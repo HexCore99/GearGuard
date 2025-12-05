@@ -1,0 +1,38 @@
+/* StatusBadge.module.css */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.available {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.rented {
+  background-color: #e0edff;
+  color: #2563eb;
+}
+
+.maintenance {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.damaged {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.default {
+  background-color: #e5e7eb;
+  color: #374151;
+}

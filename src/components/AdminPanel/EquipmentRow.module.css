@@ -1,0 +1,43 @@
+.tableRow {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1.4fr 2.1fr 1.3fr 1.2fr 0.8fr;
+  /*                ID   Name  Cat  Health  Status Last  Actions */
+  align-items: center;
+  padding: 12px 40px;
+  column-gap: 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.healthCell {
+  margin-right: 100px;
+}
+.id {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333333;
+}
+.name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555555;
+}
+.category {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #666666;
+}
+.lastRented {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #777777;
+}
+.actions {
+  gap: 20px;
+}

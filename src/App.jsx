@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import EquipmentList from "./components/EquipmentList";
 import MyRentals from "./pages/MyRentals";
 import SignIn from "./pages/SignIn";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="my-rentals" element={<MyRentals />} />
           <Route path="equipment" element={<EquipmentList />} />
           <Route path="signIn" element={<SignIn />} />
+          <Route path="admin" element={<AdminPanel />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

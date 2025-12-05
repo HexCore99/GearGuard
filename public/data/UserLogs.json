@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "userName": "John Doe",
+    "studentId": "STU001",
+    "action": "Rented",
+    "equipment": "Basketball",
+    "equipmentId": "EQ006",
+    "timestamp": "2024-12-05 10:30 AM",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "userName": "Sarah Smith",
+    "studentId": "STU002",
+    "action": "Returned",
+    "equipment": "Tennis Racket",
+    "equipmentId": "EQ007",
+    "timestamp": "2024-12-05 09:15 AM",
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "userName": "Mike Johnson",
+    "studentId": "STU003",
+    "action": "Rented",
+    "equipment": "Football",
+    "equipmentId": "EQ002",
+    "timestamp": "2024-12-04 03:45 PM",
+    "status": "overdue"
+  },
+  {
+    "id": 4,
+    "userName": "Emily Davis",
+    "studentId": "STU004",
+    "action": "Returned",
+    "equipment": "Cricket Bat",
+    "equipmentId": "EQ001",
+    "timestamp": "2024-12-04 02:20 PM",
+    "status": "completed"
+  },
+  {
+    "id": 5,
+    "userName": "Alex Brown",
+    "studentId": "STU005",
+    "action": "Rented",
+    "equipment": "Volleyball",
+    "equipmentId": "EQ008",
+    "timestamp": "2024-12-04 11:00 AM",
+    "status": "active"
+  }
+]

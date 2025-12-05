@@ -1,6 +1,18 @@
 .filterSection {
-  margin: 1rem 0;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;        /* centers the row */
   display: flex;
-  justify-content: flex-end;
-    gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;       /* stacks on narrow screens */
+}
+
+.filterSection > :first-child {
+  flex: 1 1 320px;       /* lets the search bar grow */
+}
+
+.filterSection > :last-child {
+  flex: 0 0 auto;
 }

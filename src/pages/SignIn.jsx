@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Shield, Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 import styles from "./SignIn.module.css";
 import PageNav from "../components/PageNav";
+import AdminPanel from "./AdminPanel";
 
 export default function SignIn() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -14,6 +16,7 @@ export default function SignIn() {
     role: "student",
   });
 
+  const navigate = useNavigate();
   const handleSubmit = () => {
     if (isSignUp) {
       console.log("Sign Up:", formData);
@@ -252,7 +255,10 @@ export default function SignIn() {
 
               {/* Social Login Buttons */}
               <div className={styles.socialGrid}>
-                <button className={styles.socialButton}>
+                <button
+                  className={styles.socialButton}
+                  onClick={() => navigate("/admin")}
+                >
                   <svg className={styles.socialIcon} viewBox="0 0 24 24">
                     <path
                       fill="#4285F4"

@@ -1,0 +1,44 @@
+/* EquipmentHealthBar.module.css */
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* the bar itself */
+.barBackground {
+  position: relative;
+  width: 120px; /* make this smaller/bigger if you want */
+  height: 6px; /* thin bar */
+  border-radius: 999px;
+  background-color: #e5e7eb; /* light gray */
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.25s ease-out;
+}
+
+/* color states */
+.good {
+  background-color: #16a34a; /* green */
+}
+
+.medium {
+  background-color: #f59e0b; /* yellow/orange */
+}
+
+.low {
+  background-color: #ef4444; /* red */
+}
+
+/* percentage text */
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #111827;
+  white-space: nowrap;
+}
