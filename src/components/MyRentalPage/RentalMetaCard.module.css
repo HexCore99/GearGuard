@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #f6f7f8;
+  padding: 8px 12px;
+  width: 50%;
+  border-radius: 8px;
+}
+.icon {
+  font-size: 1.2em;
+  color: #8145fe;
+}
+.labelAndDate {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.label {
+  font-size: 0.9em;
+  color: #555;
+}
+.date {
+  font-size: 0.9em;
+  font-weight: bold;
+}

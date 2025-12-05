@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "equipmentId": "EQ006",
+    "name": "Basketball",
+    "category": "Ball Sports",
+    "image": "🏀",
+    "rentedDate": "2024-12-01",
+    "dueDate": "2024-12-08",
+    "health": 88,
+    "status": "active",
+    "daysOverdue": 0,
+    "lateFee": null
+  },
+  {
+    "id": 2,
+    "equipmentId": "EQ001",
+    "name": "Cricket Bat",
+    "category": "Ball Sports",
+    "image": "🏏",
+    "rentedDate": "2024-11-28",
+    "dueDate": "2024-12-05",
+    "health": 85,
+    "status": "overdue",
+    "daysOverdue": 3,
+    "lateFee": 15
+  },
+  {
+    "id": 3,
+    "equipmentId": "EQ002",
+    "name": "Football",
+    "category": "Ball Sports",
+    "image": "⚽",
+    "rentedDate": "2024-11-25",
+    "dueDate": "2024-11-30",
+    "health": 92,
+    "status": "returned",
+    "returnedDate": "2024-11-30",
+
+    "lateFee": null
+  },
+  {
+    "id": 4,
+    "equipmentId": "EQ007",
+    "name": "Tennis Racket",
+    "category": "Racket Sports",
+    "image": "🎾",
+    "rentedDate": "2024-12-03",
+    "dueDate": "2024-12-10",
+    "health": 95,
+    "status": "active",
+    "daysOverdue": 0,
+    "lateFee": null
+  }
+]

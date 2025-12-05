@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.icon {
+  font-size: 1.5em;
+  background-color: #8145fe;
+  padding: 15px;
+  border-radius: 8px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.category {
+  color: #666;
+  font-size: 0.9em;
+}
+.itemId {
+  color: #999;
+  font-size: 0.8em;
+}
+.status {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+.itemStat {
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 5px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+.daysOverdue {
+  font-size: 0.7rem;
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+.active {
+  background-color: #dbeafe;
+  color: #425da5;
+}
+.overdue {
+  background-color: #ffe2e2;
+  color: #c10007;
+}
+.returned {
+  background-color: #dcfce7;
+  color: #309c5d;
+}

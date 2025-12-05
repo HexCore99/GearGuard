@@ -1,0 +1,53 @@
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  padding: 12px 16px;
+  border-radius: 12px;
+
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+/* Overdue (red) */
+.banner--overdue {
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+/* Returned (green) */
+.banner--returned {
+  background: #ecfdf3;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+}
+
+/* Active / not returned yet (blue) */
+.banner--active {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+}
+
+.icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  font-weight: 600;
+}
+
+.subText {
+  margin-top: 4px;
+  font-size: 0.85rem;
+}

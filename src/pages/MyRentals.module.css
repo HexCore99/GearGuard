@@ -1,0 +1,17 @@
+.myRentals {
+  min-height: 100vh;
+  background: #f2f7fe;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 16px;
+}
+
+.dashboard,
+.filters,
+.equipments {
+  width: 100%;
+}

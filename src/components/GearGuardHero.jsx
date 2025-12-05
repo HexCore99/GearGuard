@@ -1,7 +1,7 @@
 import styles from "./GearGuardHero.module.css";
-import { Package } from "lucide-react"; 
+import { Package } from "lucide-react";
 
-function GearGuardHero() {
+function GearGuardHero({ children }) {
   return (
     <div className={styles.hero}>
       <div className={styles.contents}>
@@ -11,7 +11,7 @@ function GearGuardHero() {
 
         <div className={styles.headings}>
           <h1>GearGuard</h1>
-          <p>Sports Equipment Rental System</p>
+          <p>{children}</p>
         </div>
       </div>
     </div>

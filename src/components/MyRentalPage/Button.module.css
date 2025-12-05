@@ -1,0 +1,71 @@
+.button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+}
+
+/* Base full-width helper */
+.fullWidth {
+  width: 100%;
+}
+
+/* Primary (your purple "Return Now") */
+.button--primary {
+  background: #8b3dff;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(139, 61, 255, 0.4);
+}
+
+.button--primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(139, 61, 255, 0.5);
+}
+
+.button--primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 6px 15px rgba(139, 61, 255, 0.3);
+}
+
+/* Danger (your red "Return & Pay Fee") */
+.button--danger {
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+.button--danger:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.5);
+}
+
+.button--danger:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* Optional ghost / neutral button, if you ever need it */
+.button--ghost {
+  background: transparent;
+  color: #1f2933;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+/* Disabled state */
+.disabled,
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}

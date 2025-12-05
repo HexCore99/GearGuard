@@ -1,18 +1,18 @@
 import styles from "./StatusFilter.module.css";
+import { Filter } from "lucide-react";
 
-const STATUSES = ["All Status", "Available", "Rented", "Under Maintenance", "Damaged"];
-
-function StatusFilter({ value, handleOnChange }) {
+function StatusFilter({ statusValue, onStatusChange, STATUSES }) {
   return (
     <div className={styles.filter}>
+      <span>{<Filter />}</span>
       <select
-        value={value}
-        onChange={handleOnChange}
+        value={statusValue}
+        onChange={(e) => onStatusChange(e.target.value)}
         className={styles.select}
         aria-label="Filter by status"
       >
         {STATUSES.map((status) => (
-          <option key={status} value={status === "All Status" ? "all" : status}>
+          <option key={status} value={status}>
             {status}
           </option>
         ))}

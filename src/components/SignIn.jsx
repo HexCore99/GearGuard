@@ -10,8 +10,6 @@ function SignIn({ setActiveAuthForm }) {
     setPassword(pass);
   }
 
-  function handleOnSignIn() {}
-
   return (
     <div className={styles.formCard}>
       <div className={styles.formHeader}>

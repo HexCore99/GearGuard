@@ -25,7 +25,7 @@ const NavBar = () => {
               Equipment
             </NavLink>
             <NavLink
-              to="/rentals"
+              to="/my-rentals"
               className={({ isActive }) =>
                 isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
               }

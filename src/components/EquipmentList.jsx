@@ -6,8 +6,13 @@ import GearGuardHero from "./GearGuardHero";
 import EquipmentToolbar from "./EquipmentToolbar";
 import EquipmentCards from "./EquipmentCards";
 function EquipmentList() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [, setIsLoading] = useState(false);
   const [equipmentList, setEqipmentList] = useState([]);
+  const [statusFilter, setStatusFilter] = useState("All Status");
+
+  function onStatusChange(value) {
+    setStatusFilter(value);
+  }
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,12 +32,23 @@ function EquipmentList() {
     loadData();
   }, []);
 
+  const STATUSES = [
+    "All Status",
+    "Available",
+    "Rented",
+    "Under Maintenance",
+    "Damaged",
+  ];
   return (
     <div className={styles.equipmentList}>
       <PageNav />
       <div className={styles.content}>
-        <GearGuardHero />
-        <EquipmentToolbar />
+        <GearGuardHero> Sports Equipment Rental System</GearGuardHero>
+        <EquipmentToolbar
+          statusValue={statusFilter}
+          STATUSES={STATUSES}
+          onStatusChange={onStatusChange}
+        />
         <EquipmentCards equipments={equipmentList} />
       </div>
       <Footer />

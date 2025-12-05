@@ -4,7 +4,8 @@ import styles from "./About.module.css";
 import Footer from "../components/Footer";
 import PageNav from "../components/PageNav";
 
-function FeatureCard({ icon: Icon, title, description, variant }) {
+function FeatureCard({ icon, title, description, variant }) {
+  const Icon = icon;
   return (
     <div className={styles.featureCard}>
       <div
