@@ -10,7 +10,7 @@ function AdminPanel() {
   const [userLogs, setUserLogs] = useState([]);
   const [equipments, setEquipments] = useState([]);
 
-  const [selectedTab, setSelectedTab] = useState("logs");
+  const [selectedTab, setSelectedTab] = useState("management");
 
   function onSelectedTab(value) {
     setSelectedTab(value);
