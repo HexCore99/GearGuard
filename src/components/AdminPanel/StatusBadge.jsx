@@ -9,12 +9,11 @@ function StatusBadge({ status }) {
   else if (key.includes("rented")) variant = "rented";
   else if (key.includes("maintenance")) variant = "maintenance";
   else if (key.includes("damaged")) variant = "damaged";
+  else if (key.includes("active")) variant = "active";
+  else if (key.includes("completed")) variant = "completed";
+  else if (key.includes("overdue")) variant = "overdue";
 
-  return (
-    <span className={`${styles.badge} ${styles[variant]}`}>
-      {status}
-    </span>
-  );
+  return <span className={`${styles.badge} ${styles[variant]}`}>{status}</span>;
 }
 
 export default StatusBadge;

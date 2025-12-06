@@ -34,7 +34,7 @@ function MyRentals() {
     <div className={styles.myRentals}>
       <PageNav />
       <div className={styles.content}>
-        <GearGuardHero>
+        <GearGuardHero header="Rentals">
           Track Your Rented Equipment and return dates
         </GearGuardHero>
         <DashBoard />

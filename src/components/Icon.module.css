@@ -1,0 +1,44 @@
+.icon {
+  --icon-size: 20px;
+  --icon-bg: #e0e7ff;
+  --icon-color: #533df6;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+  background: var(--icon-bg);
+  color: var(--icon-color);
+  border: 1px solid color-mix(in srgb, var(--icon-color) 18%, transparent);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  font-size: var(--icon-size);
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.icon:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.roundedSquare {
+  border-radius: 12px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 6px;
+}
+
+.pill {
+  border-radius: 999px;
+  width: calc(var(--icon-size) * 2.6);
+  height: calc(var(--icon-size) * 1.6);
+  padding: 0 10px;
+}

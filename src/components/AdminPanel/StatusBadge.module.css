@@ -36,3 +36,16 @@
   background-color: #e5e7eb;
   color: #374151;
 }
+
+.active {
+  background: #e0edff;
+  color: #2563eb;
+}
+.completed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+.overdue {
+  background: #fee2e2;
+  color: #b91c1c;
+}

@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+.action {
+  color: #4f39f6;
+}
+.name {
+  color: #5c6573;
+}
+.id {
+  color: #b7bbc3;
+}

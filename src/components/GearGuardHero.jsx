@@ -1,7 +1,7 @@
 import styles from "./GearGuardHero.module.css";
 import { Package } from "lucide-react";
 
-function GearGuardHero({ children }) {
+function GearGuardHero({ header, children }) {
   return (
     <div className={styles.hero}>
       <div className={styles.contents}>
@@ -10,7 +10,7 @@ function GearGuardHero({ children }) {
         </div>
 
         <div className={styles.headings}>
-          <h1>GearGuard</h1>
+          <h1>{header}</h1>
           <p>{children}</p>
         </div>
       </div>

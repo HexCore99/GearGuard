@@ -1,43 +1,46 @@
 import Button from "./Button";
 import styles from "./EquipmentCard.module.css";
-import EquipmentHeader from "./EquipmentHeader";
-import EquipmentHealthBar from "./EquipmentHealthBar";
-import EquipmentImage from "./EquipmentImage";
-import EquipmentStat from "./EquipmentStat";
 import Clock from "./Icon/Clock";
-function EquipmentCard({
-  name,
-  category,
-  status,
-  health,
-  lastRented,
-  id,
-  image,
-}) {
-  const isDisabled = health < 20;
+import { Calendar } from "lucide-react";
+import CardHeader from "../components/MyRentalPage/CardHeader";
+import RentalMetaCard from "../components/MyRentalPage/RentalMetaCard";
+import EquipmentHealthBar from "./EquipmentHealthBar";
+function EquipmentCard({ equipmentObj }) {
+  const {
+    image,
+    name,
+    category,
+    status,
+    daysOverdue,
+    equipmentId,
+    health,
+    lastRented,
+    price,
+  } = equipmentObj;
+  const isDisabled = health < 20 || status === "Rented";
+  console.log(isDisabled);
   return (
     <div className={styles.card}>
-      <div className={styles.imagePane}>
-        <EquipmentImage image={image} />
-      </div>
+      <CardHeader
+        icon={image}
+        itemName={name}
+        itemCategory={category}
+        itemStatus={status}
+        daysOverdue={daysOverdue}
+        itemID={equipmentId}
+      />
+      <EquipmentHealthBar health={health} />
 
-      <div className={styles.details}>
-        <EquipmentHeader
-          name={name}
-          category={category}
-          status={status}
-          id={id}
-        />
-        <EquipmentHealthBar health={health} />
-        <EquipmentStat
-          icon={<Clock />}
+      <div className={styles.rentalMetaCards}>
+        <RentalMetaCard
+          icon={<Calendar />}
           label="Last Rented"
-          value={lastRented}
+          date={lastRented}
         />
-        <Button size="sm" className={styles.centerButton} disabled={isDisabled}>
-          Rent Now
-        </Button>
       </div>
+      <Button disabled={isDisabled} className={styles.centerButton}>
+        Rent Now
+      </Button>
     </div>
   );
 }

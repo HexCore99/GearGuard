@@ -59,3 +59,22 @@
   background-color: #dcfce7;
   color: #309c5d;
 }
+.available {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.rented {
+  background-color: #e0edff;
+  color: #2563eb;
+}
+
+.under-maintenance {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.damaged {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}

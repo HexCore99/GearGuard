@@ -1,0 +1,39 @@
+.date {
+  --date-size: 10px;
+  --date-color: #533df6;
+  --date-border: 1px solid color-mix(in srgb, var(--date-color) 30%, transparent);
+
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--date-size) * 0.45);
+  padding: calc(var(--date-size) * 0.55) calc(var(--date-size) * 0.9);
+  background: color-mix(in srgb, var(--date-color) 12%, #fff);
+  color: var(--date-color);
+  border: var(--date-border);
+  border-radius: 999px;
+  font-size: var(--date-size);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+
+.date:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+.noChrome {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  gap: 0;
+  font-weight: 500;
+}
+
+.text {
+  white-space: nowrap;
+}

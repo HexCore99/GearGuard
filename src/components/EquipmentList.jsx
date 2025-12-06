@@ -43,7 +43,10 @@ function EquipmentList() {
     <div className={styles.equipmentList}>
       <PageNav />
       <div className={styles.content}>
-        <GearGuardHero> Sports Equipment Rental System</GearGuardHero>
+        <GearGuardHero header="Equipments">
+          {" "}
+          Sports Equipment Rental System
+        </GearGuardHero>
         <EquipmentToolbar
           statusValue={statusFilter}
           STATUSES={STATUSES}

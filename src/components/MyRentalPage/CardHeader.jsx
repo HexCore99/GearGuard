@@ -7,6 +7,8 @@ function CardHeader({
   daysOverdue,
   itemID,
 }) {
+  const statusKey = (itemStatus ?? "").toLowerCase().replace(/\s+/g, "-");
+
   return (
     <div className={styles.header}>
       <div className={styles.leftSection}>
@@ -18,9 +20,7 @@ function CardHeader({
         </div>
       </div>
       <div className={styles.status}>
-        <span
-          className={`${styles.itemStat} ${styles[itemStatus.toLowerCase()]}`}
-        >
+        <span className={`${styles.itemStat} ${styles[statusKey]}`}>
           {itemStatus}
         </span>
         {daysOverdue > 0 && (
